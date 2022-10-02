@@ -1,0 +1,51 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    background-color: #fdfdfd;
+}
+
+.shadow {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #f00000;
+    border-color: #dc281e;
+}
+
+.masthead {
+    background-color: #3D2B1F;
+    height: 200px;
+    padding-bottom: 10px;
+    box-shadow: 0 16px 48px #E3E7EB;
+    padding-top: 10px;
+}
+
+.head_text {
+    color: white;
+    text-shadow: 2px 2px black;
+    font-size: 40px;
+}
+
+.card {
+    box-shadow: 0 16px 48px #3D2B1F;
+}
+
+.bg-color {
+    /* background-color: #3D2B1F; */
+    background: url("https://images.pexels.com/photos/2908984/pexels-photo-2908984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 40px;
+}
+
+.navbar-color {
+    background-color: #3D2B1F;
+    position: sticky;
+}
+
+/* footer {
+    margin-top: 30px;
+} */
