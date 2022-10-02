@@ -15,7 +15,7 @@
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | 
                         <i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
                     <p class="card-text">{{post.text|slice:":200" }}</p>
-                    <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
             </div>
             {% endfor %}
