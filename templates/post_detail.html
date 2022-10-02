@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+
+      <div class="card-body">
+        <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
+        <p class="text-muted">{{ post.author }} | {{ post.created_on }}</p>
+
+        <div class="image-container">
+          {% if "placeholder" in post.featured_image.url %}
+            <img class="card-img-top"
+              src="https://i.pinimg.com/736x/f0/da/44/f0da44dc8397004b068f49242b24ee74.jpg">
+          {% else %}
+            <img class="card-img-top" src="{{ post.featured_image.url }}">
+          {% endif %}
+
+            <div class="image-flash">
+                <p class="author">Author: {{ post.author }}</p>
+            </div>
+        </div>
+
+        {% if user.is_authenticated %}
+          <a href="{% url 'editpost' pk=post.pk %}" class="btn btn-outline-primary btn-sm">Edit</a>
+        {% endif %}
+
+        <p class="card-body card-text">{{ post.text|linebreaksbr }}</p>
+      </div>
+      <p class="card-body card-text text-muted h6"><i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
+      <hr>
+      <div class="card-body">
+        <h3>Comments...</h3>
+
+        {% if not post.comments.all %}
+        <p>No Comments yet!</p>
+        <a href="{% url 'addcomment' post.pk %}" class="btn btn-outline-primary btn-sm">Add Comment</a>
+        
+        {% else %}
+        
+          {% for comment in post.comments.all %}
+          <div class="list-group-item">
+            <p class="card-subtitle text-muted">{{ comment.name }} | {{ comment.published_date }}</p>
+            <p>{{ comment.body }}</p>
+          </div>
+          {% endfor %}
+
+        <br>
+        <a href="{% url 'addcomment' post.pk %}" class="btn btn-outline-primary btn-sm">Add New Comment</a>
+        {% endif %}
+
+      </div>
+
+    </div>
+    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+  </div>
+</div>
+
+{% endblock content %}
