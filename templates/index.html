@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-md-center">
 
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
@@ -14,7 +14,7 @@
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | 
                         <i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
-                    <p class="card-text">{{post.text|slice:":200" }}</p>
+                    <p class="card-text">{{post.excerpt|slice:":200" }}</p>
                     <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
             </div>
