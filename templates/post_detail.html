@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+{% load crispy_forms_tags %}
 
 <div class="container">
   <div class="row">
@@ -30,32 +31,64 @@
 
         <p class="card-body card-text">{{ post.text|linebreaksbr }}</p>
       </div>
-      <p class="card-body card-text text-muted h6"><i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
+
+      <strong>
+        {% if user.is_authenticated %}
+        <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+          {% csrf_token %}
+          {% if liked %}
+          <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+            <i class="fas fa-heart"></i>
+          </button>
+          {% else %}
+          <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+            <i class="far fa-heart"></i>
+          </button>
+          {% endif %}
+        </form>
+        {% else %}
+        <span class="text-secondary"><i class="far fa-heart"> </i></span>
+        {% endif %}
+        <span class="text-secondary">{{ post.number_of_likes }}</span>
+      </strong>
+
+      <!-- <p class="card-body card-text text-muted h6"><i class="far fa-heart"></i> {{ post.number_of_likes }}</p> -->
       <hr>
       <div class="card-body">
         <h3>Comments...</h3>
 
         {% if not post.comments.all %}
         <p>No Comments yet!</p>
-        <a href="#" class="btn btn-outline-primary btn-sm">Add Comment</a>
-        
+
         {% else %}
-        
           {% for comment in post.comments.all %}
           <div class="list-group-item">
-            <p class="card-subtitle text-muted">{{ comment.name }} | {{ comment.published_date }}</p>
+            <p class="card-subtitle text-muted">{{ comment.name }} | {{ comment.created_on }}</p>
             <p>{{ comment.body }}</p>
           </div>
           {% endfor %}
+        
+        {% endif %}
 
         <br>
-        <a href="#" class="btn btn-outline-primary btn-sm">Add New Comment</a>
+
+        {% if commented %}
+        <div class="alert alert-success" role="alert">Your comment is awaiting approval</div>
+        {% else %}
+          {% if user.is_authenticated %}
+          <h4>Leave a comment:</h4>
+          <p>Posting as: {{ user.username }}</p>
+          <form method="post" style="margin-top: 1.3em;">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button>
+          </form>
+          {% endif %}
         {% endif %}
 
       </div>
 
     </div>
-    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
   </div>
 </div>
 
