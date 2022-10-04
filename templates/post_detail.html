@@ -15,7 +15,7 @@
         <div class="image-container">
           {% if "placeholder" in post.featured_image.url %}
             <img class="card-img-top"
-              src="https://i.pinimg.com/736x/f0/da/44/f0da44dc8397004b068f49242b24ee74.jpg">
+              src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
           {% else %}
             <img class="card-img-top" src="{{ post.featured_image.url }}">
           {% endif %}
@@ -24,10 +24,6 @@
                 <p class="author">Author: {{ post.author }}</p>
             </div>
         </div>
-
-        {% if user.is_authenticated %}
-          <a href="#" class="btn btn-outline-primary btn-sm">Edit</a>
-        {% endif %}
 
         <p class="card-text">{{ post.excerpt|linebreaksbr }}</p>
       
