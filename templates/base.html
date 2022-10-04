@@ -10,15 +10,19 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/32c8c0ea26.js" crossorigin="anonymous"></script>
 
     </head>
 
-    <body>
+    <body >
         
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow" id="mainNav">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'index' %}">Book Club</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -35,9 +39,9 @@
                         </li>
                         
                         {% if user.is_authenticated %}
-                        <li class="nav-item text-black">
+                        <!-- <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="#">New Post</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'account_logout' %}">Logout</a>
                         </li>
@@ -55,15 +59,14 @@
         </nav>
 
         <!-- Header -->
-        <header class="masthead bg-secondary">
+        <header class="masthead bg-primary">
             <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-10 mx-auto">
                             <div class="site-heading">
-                                <h3 class="site-heading my-4 mt-3 text-white"> Welcome to Book Club </h3>
-                                <p class="text-light">We Love BOOKS As much as you do..! &nbsp
-                                </p>
+                                <h2 class="site-heading my-4 mt-3 text-white"> Welcome to Book Club </h2>
+                                <h5 class="text-light">We Love BOOKS As much as you do..! &nbsp </h5>
                             </div>
                         </div>
                     </div>
@@ -84,7 +87,7 @@
             </div>
         </div>
 
-        <div style="background: url('https://images.pexels.com/photos/2908984/pexels-photo-2908984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+        <div class="bg-dark bg-base">
         {% block content %}
 
         <!-- Content Goes here -->
@@ -93,10 +96,9 @@
         </div>
         
         <!-- Footer -->
-        <footer class="py-3 bg-grey">
-            <p class="m-0 text-dark text-center ">Copyright &copy; Book Club</p>
+        <footer class="py-3 bg-dark">
+            <p class="m-0 text-light text-center ">Copyright &copy; Book Club</p>
         </footer>
-
         <script>
             setTimeout(function () {
                 let messages = document.getElementById("msg");

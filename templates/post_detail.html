@@ -9,7 +9,7 @@
     <div class="col-md-8 card mb-4  mt-3 left  top">
 
       <div class="card-body">
-        <h1>{% block title %} {{ post.excerpt }} {% endblock title %}</h1>
+        <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
         <p class="text-muted">{{ post.author }} | {{ post.created_on }}</p>
 
         <div class="image-container">
@@ -69,7 +69,7 @@
         <br>
 
         {% if commented %}
-        <div class="alert alert-success" role="alert">Your comment is awaiting approval</div>
+        <div class="alert alert-success" id="msg" role="alert">Thanks for your comment</div>
         {% else %}
           {% if user.is_authenticated %}
           <h4>Leave a comment:</h4>
@@ -91,5 +91,5 @@
     </div>
   </div>
 </div>
-
+<br>
 {% endblock content %}
