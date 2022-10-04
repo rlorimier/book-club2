@@ -79,6 +79,10 @@
             {% csrf_token %}
             <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button>
           </form>
+          {% else %}
+          <p>To leave a comment, please 
+            <a class="text-black" href="{% url 'account_login' %}">Login</a> or
+            <a class="text-black" href="{% url 'account_signup' %}">Register</a></p>
           {% endif %}
         {% endif %}
 
