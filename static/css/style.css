@@ -5,7 +5,9 @@ body {
 }
 
 .bg-base {
-    background: url('https://images.pexels.com/photos/256453/pexels-photo-256453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background: url('https://images.pexels.com/photos/2908984/pexels-photo-2908984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .btn-danger {
@@ -15,6 +17,7 @@ body {
 }
 
 .masthead {
+    background-color: #231709;
     height: 200px;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -23,8 +26,3 @@ body {
 .card {
     box-shadow: 0 16px 32px #3D2B1F;
 }
-
-.navbar-color {
-    position: sticky;
-}
-
