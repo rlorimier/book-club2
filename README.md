@@ -1,108 +1,97 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# BOOK CLUB 2
 
-Welcome rlorimier,
+For my Milestone Project #4 on Code Institute's Diploma in Software Developement course I have created a blog, called Book Club. The blog is used to post reviews about books. All users can read the preview of the reviews on the main page and then be redirected to another page with the full review clicking on the 'Read more' button. If the user is registered and currently logged in, he can have access to leave a comment or like/dislike a post.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+You can check the blog clicking [HERE](https://book-club2.herokuapp.com/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+HOME-PHOTO
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Features
 
-`python3 -m http.server`
+### Code features
 
-A blue button should appear to click: _Make Public_,
+* Created in Django using Gitpod.
+* Deployed in Heroku for online interaction.
 
-Another blue button should appear to click: _Open Browser_.
+### User features
+* Option to register/sign in on the blog clicking on the respective button from the navigation bar on the top left.
+* Once registered/logged in, user can interact with the blog, leaving a new comment or like/dislike posts on the post page.
+* Option to log out by clicking on the respective button from the navigation bar on the top left.
+* Read more button, on botton of every post, giving the user the possibility of reading the full review.
+* Home button, on the navigation bar at the top left, bringing the user back to the home page.
+* About button, on the navigation bar at the top left, leading the user to a new page containing information about how the blog was created.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+## Technologies used
+* Django
+* Gitpod as IDE
+* Git for version control
+* GitHub to storage files
+* Cloudinary to storage media
+* Heroku for deployment
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Resources
+* [Code Institute](https://codeinstitute.net/ie/) - course materials, Slack community and tutor/mentor support
+* [Boostrap docs](https://getbootstrap.com/) - for material support
+* [Django central](https://djangocentral.com/) - for inspiration and material support
+* [Codemy.com](https://www.youtube.com/c/Codemycom) - youtube channel for material support
+* [W3 Schools](https://www.w3schools.com/) - for material support
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Credits
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Content
+* Book reviews from [Goodreads](https://www.goodreads.com/) website.
 
-------
 
-## Release History
+## Testing
+Manual tests done as admin user, regular user and visitant. In all scenarios the blog funcionalities worked without showing any issues.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Bugs/Issues 
+### (from 1st repository)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+* Gitignore <br>
+When setting up all files and folders I forgot to include the .gitignore. So, when at some stage on my commitments I received and warning email from GitHub about my keys being exposed. <br>
+*To Fix: No support needed - I just created a new file, added the necessary content on it and then commit/push to Github.*
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+* Login on Django Admin <br>
+When setting the supper user I was having trouble to access the Django Admin page. The url was returning an error message. <br>
+*To Fix: Needed support from Tutor - The server was not running. I was told to run the server and use the url https://8000-rlorimier-bookclub-fa25pzry77q.ws-eu63.gitpod.io/admin/.*
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+* Hyperlinks not working <br>
+The pages were not extending the 'base.html' <br>
+*To Fix: Needed support from Tutor - I was told to include on the top of every page 'load static' and it worked*
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* New comment does not show <br>
+When adding a new comment (logged in and/or out), the page is reloaded and redirected correctly with no error messages, however the comment is not saved and does not appear on the website neither on the blog admin server. <br>
+*To Fix: No support needed (although I tried to discuss this issue with my mentor but the time was not enough) - This is the issue that took longer to be solved. I searched on web for different tutorials but any of them seemed to be helpfull. After a while, I just needed to add 'data' on views.py, line 55*
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* New post show error message <br>
+When adding a new post (only logged users), it shows and error message <br>
+*To Fix: No support needed - I was using the same function for both, edit and create a new post. I decided to make it individualy and then it starts to work*
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* GET /favicon.ico HTTP/1.1" 404 179 <br>
+The terminal keeps showing this error from time to time and I can not find a solution or even where is comming from, as I did not add any favicon on the blog. <br> *BUG NOT FIXED*
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+* Push failed on Heroku <br>
+When pushing my gitpod project to Heroku, following the instructions for: DEBUG=False and excluding DISABLE_COLLECTSTATIC=1, an error message is shown. I tried help from my mentor and from the tutor support but none of them were able to help me to find a solution for it. So, I left the DEBUG as False on my code and added again the DISABLE_COLLECTSTATIC=1 and tried to puch my code again. The push worked this time, however the css file is not being loaded. All funcionalities seems to work fine on the manual tests, but the css. <br> *BUG NOT FIXED*
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Bugs/Issues 
+### (from 2nd repository)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+## Creating a Repository and Deploying
+The steps to create a new repository:
 
-## FAQ about the uptime script
+Logged in my GitHub page and accessed Code Institute GitHub page. Selected python-essencials-template and clicked in Use This Template. Created a new repository from the one mentioned above. On my GitHub Desktop, selected Add and then Clone a repository. On my Visual Studio Code (VSC), selected Open Folder and then selected the new created folder to start coding. The steps to commit and push commits:
 
-**Why have you added this script?**
+Every alteration on the files was being saved automatically. GitHub Desktop is connected with VSC and showns every changes made on the files. After every significant amount of coding is time for local commits: On GitHub Desktop, type in a name for the commit and click Commit to Main. After a work day, the last local commit is done and then click in Push Origim to commit all local commits to GitHub repository. To Deploy:
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+Logged in Heroku page and clicked New > Create New App. Selected app name and region. On Settings: Created a Config Var called PORT and setted to 8000. Added Python and NodeJS buildpacks. On Deploy: Conected to my GitHub and searched a repository to conect with. Clicked Deploy Branch
