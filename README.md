@@ -19,12 +19,18 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 * Deployed in Heroku for online interaction.
 
 ### User features
-* Option to register/sign in on the blog clicking on the respective button from the navigation bar on the top left.
-* Once registered/logged in, user can interact with the blog, leaving a new comment or like/dislike posts on the post page.
-* Option to log out by clicking on the respective button from the navigation bar on the top left.
-* Read more button, on botton of every post, giving the user the possibility of reading the full review.
+
 * Home button, on the navigation bar at the top left, bringing the user back to the home page.
 * About button, on the navigation bar at the top left, leading the user to a new page containing information about how the blog was created.
+* Option to register/sign in on the blog clicking on the respective button from the navigation bar on the top left.
+![Navbar-Login](media/images/navbar-login.png)
+
+* Option to log out by clicking on the respective button from the navigation bar on the top left.
+![Navbar-Logout](media/images/navbar-logout.png)
+
+* Once registered/logged in, user can interact with the blog, leaving a new comment or like/dislike posts on the post page.
+* Read more button, on botton of every post, giving the user the possibility of reading the full review.
+
 
 
 ## Technologies used
@@ -50,6 +56,65 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 * Book reviews from [Goodreads](https://www.goodreads.com/) website.
 
 
+
+## User Stories
+
+### As Visitor:
+
+* I want to be able to navigate through the website.
+
+All pages are accessible to all visitors on the blog.
+
+
+* I want to know how the blog was created.
+
+All users can have access to the About us page.
+
+
+* I want to read the book reviews.
+
+The pages with full reviews are accessible to all users clicking on the button ‘Read more’ at the Home page. The user can read the review, see the book cover, see the number of likes, and read the comments left from registered users.
+
+
+* I want to make comments and like the posts.
+
+This option is only available for registered users.
+
+
+* I want to leave a review
+
+This option is only available for the blog admin.
+
+
+### As Registered User:
+
+* I want to be able to navigate through the website.
+
+All pages are accessible to all visitors on the blog.
+
+
+* I want to know how the blog was created.
+
+All users can have access to the About us page.
+
+
+* I want to read the book reviews.
+
+The pages with full reviews are accessible to all users clicking on the button ‘Read more’ at the Home page. The user can read the review, see the book cover, see the number of likes, and read the comments left from registered users.
+
+
+* I want to make comments and like the posts.
+
+This option is available when the user is logged in to the blog, by accessing the book review page. The button to like the book review is just after the text, followed by the comment field.
+
+
+* I want to leave a review.
+
+This option is only available for the blog admin.
+
+
+
+
 ## Testing
 
 ### Manual Testing
@@ -59,6 +124,7 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 Manual testing result:
 
+![Manual-Testing](media/images/manual-testing.png)
 
 
 ### Accessibility Testing
