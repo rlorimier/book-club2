@@ -2,9 +2,13 @@
 
 For my Milestone Project #4 on Code Institute's Diploma in Software Developement course I have created a blog, called Book Club. The blog is used to post reviews about books. All users can read the preview of the reviews on the main page and then be redirected to another page with the full review clicking on the 'Read more' button. If the user is registered and currently logged in, he can have access to leave a comment or like/dislike a post.
 
-You can check the blog clicking [HERE](https://book-club2.herokuapp.com/)
 
-HOME-PHOTO
+You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
+
+
+![HOME-PHOTO](media/images/all-devices-black.png)
+
+
 
 
 ## Features
@@ -47,7 +51,20 @@ HOME-PHOTO
 
 
 ## Testing
-Manual tests done as admin user, regular user and visitant. In all scenarios the blog funcionalities worked without showing any issues.
+
+### Manual Testing
+
+* Manual tests done as admin user, regular user and visitant. In all scenarios the blog funcionalities worked without showing any issues.
+* I also send the live link to friends and family members for testing and feedback.
+
+Manual testing result:
+
+
+
+### Accessibility Testing
+
+* Tested using [Accessibility Test](https://accessibilitytest.org/) and the result is as follow:
+
 
 
 
@@ -55,35 +72,52 @@ Manual tests done as admin user, regular user and visitant. In all scenarios the
 ### (from 1st repository)
 
 
-* Gitignore <br>
+
+* Gitignore
+
 When setting up all files and folders I forgot to include the .gitignore. So, when at some stage on my commitments I received and warning email from GitHub about my keys being exposed. <br>
 *To Fix: No support needed - I just created a new file, added the necessary content on it and then commit/push to Github.*
 
-* Login on Django Admin <br>
+
+* Login on Django Admin
+
 When setting the supper user I was having trouble to access the Django Admin page. The url was returning an error message. <br>
 *To Fix: Needed support from Tutor - The server was not running. I was told to run the server and use the url https://8000-rlorimier-bookclub-fa25pzry77q.ws-eu63.gitpod.io/admin/.*
 
-* Hyperlinks not working <br>
+
+* Hyperlinks not working
+
 The pages were not extending the 'base.html' <br>
 *To Fix: Needed support from Tutor - I was told to include on the top of every page 'load static' and it worked*
 
-* New comment does not show <br>
+
+* New comment does not show
+
 When adding a new comment (logged in and/or out), the page is reloaded and redirected correctly with no error messages, however the comment is not saved and does not appear on the website neither on the blog admin server. <br>
 *To Fix: No support needed (although I tried to discuss this issue with my mentor but the time was not enough) - This is the issue that took longer to be solved. I searched on web for different tutorials but any of them seemed to be helpfull. After a while, I just needed to add 'data' on views.py, line 55*
 
-* New post show error message <br>
+
+* New post show error message
+
 When adding a new post (only logged users), it shows and error message <br>
 *To Fix: No support needed - I was using the same function for both, edit and create a new post. I decided to make it individualy and then it starts to work*
 
-* GET /favicon.ico HTTP/1.1" 404 179 <br>
+
+* GET /favicon.ico HTTP/1.1" 404 179
+
 The terminal keeps showing this error from time to time and I can not find a solution or even where is comming from, as I did not add any favicon on the blog. <br> *BUG NOT FIXED*
 
-* Push failed on Heroku <br>
+
+* Push failed on Heroku
+
 When pushing my gitpod project to Heroku, following the instructions for: DEBUG=False and excluding DISABLE_COLLECTSTATIC=1, an error message is shown. I tried help from my mentor and from the tutor support but none of them were able to help me to find a solution for it. So, I left the DEBUG as False on my code and added again the DISABLE_COLLECTSTATIC=1 and tried to puch my code again. The push worked this time, however the css file is not being loaded. All funcionalities seems to work fine on the manual tests, but the css. <br> *BUG NOT FIXED*
 
 
 ## Bugs/Issues 
 ### (from 2nd repository)
+
+
+
 
 
 
