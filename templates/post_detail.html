@@ -15,9 +15,10 @@
         <div class="image-container">
           {% if "placeholder" in post.featured_image.url %}
             <img class="card-img-top"
-              src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+              src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt="Book cover unavailable">
           {% else %}
-            <img class="card-img-top" src="{{ post.featured_image.url }}">
+            <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Book cover image">
           {% endif %}
 
             <div class="image-flash">
