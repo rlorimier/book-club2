@@ -13,10 +13,12 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 ## Features
 
+
 ### Code features
 
 * Created in Django using Gitpod.
 * Deployed in Heroku for online interaction.
+
 
 ### User features
 
@@ -29,11 +31,19 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 ![Navbar-Logout](media/images/navbar-logout.png)
 
 * Once registered/logged in, user can interact with the blog, leaving a new comment or like/dislike posts on the post page.
+![Comments-field](media/images/comments-field.png)
+
+* Warning message is shown when user log in/out or leave a comment.
+![Warning-msg](media/images/warning-msg.png)
+
 * Read more button, on botton of every post, giving the user the possibility of reading the full review.
+![Readmore-btn](media/images/readmore-btn.png)
+
 
 
 
 ## Technologies used
+
 * Django
 * Gitpod as IDE
 * Git for version control
@@ -43,6 +53,7 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 
 ## Resources
+
 * [Code Institute](https://codeinstitute.net/ie/) - course materials, Slack community and tutor/mentor support
 * [Boostrap docs](https://getbootstrap.com/) - for material support
 * [Django central](https://djangocentral.com/) - for inspiration and material support
@@ -50,14 +61,19 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 * [W3 Schools](https://www.w3schools.com/) - for material support
 
 
+
+
 ## Credits
+
 
 ### Content
 * Book reviews from [Goodreads](https://www.goodreads.com/) website.
 
 
 
+
 ## User Stories
+
 
 ### As Visitor:
 
@@ -117,6 +133,7 @@ This option is only available for the blog admin.
 
 ## Testing
 
+
 ### Manual Testing
 
 * Manual tests done as admin user, regular user and visitant. In all scenarios the blog funcionalities worked without showing any issues.
@@ -134,9 +151,7 @@ Manual testing result:
 
 
 
-## Bugs/Issues 
-### (from 1st repository)
-
+## Bugs/Issues *(from 1st repository)*
 
 
 * Gitignore
@@ -179,8 +194,9 @@ The terminal keeps showing this error from time to time and I can not find a sol
 When pushing my gitpod project to Heroku, following the instructions for: DEBUG=False and excluding DISABLE_COLLECTSTATIC=1, an error message is shown. I tried help from my mentor and from the tutor support but none of them were able to help me to find a solution for it. So, I left the DEBUG as False on my code and added again the DISABLE_COLLECTSTATIC=1 and tried to puch my code again. The push worked this time, however the css file is not being loaded. All funcionalities seems to work fine on the manual tests, but the css. <br> *BUG NOT FIXED*
 
 
-## Bugs/Issues 
-### (from 2nd repository)
+
+
+## Bugs/Issues *(from 2nd repository)*
 
 
 
