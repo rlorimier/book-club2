@@ -44,15 +44,31 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 ## Technologies used
 
-* Django
-* Gitpod as IDE
-* Git for version control
-* GitHub to storage files
-* Cloudinary to storage media
-* Heroku for deployment
+
+### Languages
+
+* [Python3](https://www.python.org/)
+* HTML5
+* CSS
+* [JavaScript](https://www.javascript.com/)
+
+
+### Frameworks, Libraries and other programs
+
+* [Django](https://www.djangoproject.com/) framework (from Python)
+* Django [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) and [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/#) libraries
+* [Gitpod](https://www.gitpod.io/) as IDE
+* [GitHub](https://github.com/) to storage files
+* [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/) for CSS package
+* [Cloudinary](https://cloudinary.com/) to storage media
+* [Heroku](https://www.heroku.com) for deployment
+* Postgres as database (from Heroku)
+
+
 
 
 ## Resources
+
 
 * [Code Institute](https://codeinstitute.net/ie/) - course materials, Slack community and tutor/mentor support
 * [Boostrap docs](https://getbootstrap.com/) - for material support
@@ -67,6 +83,7 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 
 ### Content
+
 * Book reviews from [Goodreads](https://www.goodreads.com/) website.
 
 
@@ -142,6 +159,27 @@ This option is only available for the blog admin.
 Manual testing result:
 
 ![Manual-Testing](media/images/manual-testing.png)
+
+
+### Code Testing
+
+* Python - [PythonChecker](https://www.pythonchecker.com/)
+
+All .py files were individualy tested, with the exception of settings.py, as some of the lines are longer than 79 characters but they are required for functionality of the website.
+
+![Python-testing](media/images/python-testing.png)
+
+* HTML
+
+
+* CSS - [Jigsaw](https://jigsaw.w3.org/css-validator/)
+
+![CSS-testing](media/images/css-testing.png)
+
+* JavaScript - [JSHint](https://jshint.com/)
+
+![JSHint-testing](media/images/jshint-testing.png)
+
 
 
 ### Accessibility Testing
