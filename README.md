@@ -169,8 +169,11 @@ All .py files were individualy tested, with the exception of settings.py, as som
 
 ![Python-testing](media/images/python-testing.png)
 
-* HTML
+* HTML - [W3C](https://validator.w3.org/nu/)
 
+W3C Validator shows one error on the HTML, however it cannot be fixed. The closing div tag mentioned is the one after the endblock content on base.html and if removed the css classes will not be applied.
+
+![HTML-testing](media/images/html-testing.png)
 
 * CSS - [Jigsaw](https://jigsaw.w3.org/css-validator/)
 
@@ -188,6 +191,15 @@ All .py files were individualy tested, with the exception of settings.py, as som
 ![Accessibility-test](media/images/accessibility-test.png)
 
 
+
+### Browser Testing
+
+The site was tested and worked without any issues, using:
+* Internet Explorer
+* Google Chrome
+* Microsoft Edge
+* Firefox
+* Samsung Internet
 
 
 
@@ -240,7 +252,12 @@ When pushing my gitpod project to Heroku, following the instructions for: DEBUG=
 ## Bugs/Issues *(from 2nd repository)*
 
 
+* Error 500 when registering using an email
 
+When the user is registering into the blog, if he adds his email and clicks on 'Register', the site returns the Error 500.<br>
+*To Fix: Tutor help was needed. They instructed me to add two lines on settings.py. It creates a default email so if the user adds and nonexistent email or type it wrongly, the user will be registered anyway and redirected to the home page, with no errors.*
+
+![Error500](media/images/signup-error500.png)
 
 
 
