@@ -1,6 +1,8 @@
 # BOOK CLUB 2
 
-For my Milestone Project #4 on Code Institute's Diploma in Software Developement course I have created a blog, called Book Club. The blog is used to post reviews about books. All users can read the preview of the reviews on the main page and then be redirected to another page with the full review clicking on the 'Read more' button. If the user is registered and currently logged in, he can have access to leave a comment or like/dislike a post.
+For my Project Portifolio #4 on Code Institute's Diploma in Software Developement course I have created a blog, called Book Club. The blog is used to post reviews about books. All users can read the preview of the reviews on the main page and then be redirected to another page with the full review clicking on the 'Read more' button. If the user is registered and currently logged in, he can have access to leave a comment or like/dislike a post.
+
+This is my second time submiting my PP4. The first attempt was failed because the deployment on Heroku was not done correctly, causing the live link to crash. With this new project I was able to fix some past issues and improve a few small things that did not look right or that was not working properly on the first time.
 
 
 You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
@@ -40,6 +42,11 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 ![Readmore-btn](media/images/readmore-btn.png)
 
 
+### To be implemented 
+
+* For registered users - option to contribute with the blog, creating new posts. A new button called 'New post' will be displayed on the navbar, on the top left. Clicking on the button the user will be redirected to a new page where he can add the title, the review and the book cover. Once saved the post goes to admin aproval and, if aproved, it will be displayed as posted by the user on the home page.
+
+
 
 
 ## Technologies used
@@ -63,6 +70,8 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 * [Cloudinary](https://cloudinary.com/) to storage media
 * [Heroku](https://www.heroku.com) for deployment
 * Postgres as database (from Heroku)
+* [Favicon](https://favicon.io/) for favicon
+* [Pexels](https://www.pexels.com/) for background image
 
 
 
@@ -85,6 +94,7 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 ### Content
 
 * Book reviews from [Goodreads](https://www.goodreads.com/) website.
+* Book cover images from [Google](http://www.google.com)
 
 
 
@@ -262,10 +272,28 @@ When the user is registering into the blog, if he adds his email and clicks on '
 
 
 ## Creating a Repository and Deploying
-The steps to create a new repository:
 
-Logged in my GitHub page and accessed Code Institute GitHub page. Selected python-essencials-template and clicked in Use This Template. Created a new repository from the one mentioned above. On my GitHub Desktop, selected Add and then Clone a repository. On my Visual Studio Code (VSC), selected Open Folder and then selected the new created folder to start coding. The steps to commit and push commits:
+* To create a new repository:
 
-Every alteration on the files was being saved automatically. GitHub Desktop is connected with VSC and showns every changes made on the files. After every significant amount of coding is time for local commits: On GitHub Desktop, type in a name for the commit and click Commit to Main. After a work day, the last local commit is done and then click in Push Origim to commit all local commits to GitHub repository. To Deploy:
+Logged in my GitHub page and accessed Code Institute GitHub page. 
 
-Logged in Heroku page and clicked New > Create New App. Selected app name and region. On Settings: Created a Config Var called PORT and setted to 8000. Added Python and NodeJS buildpacks. On Deploy: Conected to my GitHub and searched a repository to conect with. Clicked Deploy Branch
+Selected python-essencials-template and clicked in Use This Template. 
+
+Created a new repository from the one mentioned above and choose the option 'Gitpod'. Once the repository is open on Gitpod it is just start to code. I chose the option to save automatically. 
+
+After every significant amount of coding is time for local commits: On Gitpot, go to Source Control, type in a message and click Commit. After a work day, the last local commit is done and then click in Push to commit all local commits to GitHub repository. 
+
+
+* To Deploy:
+
+The project was deployed using Heroku. The process is as follows:
+
+Once you have signed up to Heroku, on the top right of the dashboard there is a button labelled 'New'. This will open a dropdown; please select 'Create new app'. On the next page you can choose your region and a name for the project. Then click 'Create app'.
+
+On the next page there is a menu along the top. Navigate to 'Settings', where you will find the config vars. Scroll down to the section named 'Config vars' and click on the button labelled 'Reveal config vars'. Cloudinary and Postgres will both need config vars as per your own details. You will also need to set a secret key. Once the config vars are saved, back in Gitpod save them in an env.py file. Make sure to add env.py to your .gitignore list so that your config vars do not become publically available on Github.
+
+If you scroll back to the top of the page you will find the 'Deploy' tab, which has multiple options for deployment. As I am using Github for this project, I selected it and a bar came up to search for the repo I wish to connect to.
+
+Once you have connected, you have the option to deploy automatically (the app will update every time you push) or manually (update only when you choose). I chose automatic but you can do what suits you.
+
+After the first push/update, your app will be ready to go!
