@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
@@ -79,20 +81,36 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+@login_required #
 def newpost(request):
+
+    if not request.user.is_superuser: #
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.published_date = timezone.now()
-            post.save()
-            return redirect('details', pk=post.pk)
+            # post.published_date = timezone.now()
+            # post.save()
+            # return redirect('details', pk=post.pk)
+            return redirect(reverse('post_detail', args=[post.id])) #
+        else: #
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.') #
     else:
         form = PostForm()
-    return render(request, 'newpost.html', {'form': form})
+
+    template = 'products/add_product.html' #
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'post_detail.html', {'form': form})
 
 
 def about(request):
     aboutus = ""
     return render(request, 'about.html', {'aboutus': aboutus})
+
