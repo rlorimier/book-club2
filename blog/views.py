@@ -81,7 +81,7 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-@login_required #
+# @login_required #
 def new_post(request):
 
     if not request.user.is_superuser: #
@@ -95,19 +95,19 @@ def new_post(request):
             post.author = request.user
             # post.published_date = timezone.now()
             # post.save()
-            # return redirect('details', pk=post.pk)
+            # return redirect('post_details', pk=post.pk)
             return redirect(reverse('post_detail', args=[post.id])) #
         else: #
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.') #
+            messages.error(request, 'Failed to add new post.') #
     else:
         form = PostForm()
 
-    template = 'products/add_product.html' #
-    context = {
-        'form': form,
-    }
+    # template = 'products/add_product.html' #
+    # context = {
+    #     'form': form,
+    # }
 
-    return render(request, 'post_detail.html', {'form': form})
+    return render(request, 'new_post.html', {'form': form})
 
 
 def about(request):

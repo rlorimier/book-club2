@@ -10,9 +10,10 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+        <!-- <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png"> -->
+        <link rel="icon" type="image/x-icon" href="../static/favicon/favicon.ico" >
         <link rel="manifest" href="../static/favicon/site.webmanifest">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/32c8c0ea26.js" crossorigin="anonymous"></script>
@@ -39,8 +40,8 @@
                         
                         {% if user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <li class="nav-item text-black">
-                                <a class="nav-link text-black font-weight-bold" href="#">New Post</a>
+                            <li class="nav-item">
+                                <a class="nav-link text-light font-weight-bold" href="{% url 'new_post' %}">New Post</a>
                             </li>
                             {% endif %}
                         <li class="nav-item">
