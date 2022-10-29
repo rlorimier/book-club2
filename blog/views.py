@@ -82,7 +82,7 @@ class PostLike(View):
 
 
 @login_required #
-def newpost(request):
+def new_post(request):
 
     if not request.user.is_superuser: #
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -113,4 +113,3 @@ def newpost(request):
 def about(request):
     aboutus = ""
     return render(request, 'about.html', {'aboutus': aboutus})
-
