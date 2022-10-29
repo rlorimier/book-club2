@@ -79,6 +79,20 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+def newpost(request):
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('details', pk=post.pk)
+    else:
+        form = PostForm()
+    return render(request, 'newpost.html', {'form': form})
+
+
 def about(request):
     aboutus = ""
     return render(request, 'about.html', {'aboutus': aboutus})
