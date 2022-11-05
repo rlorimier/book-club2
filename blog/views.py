@@ -1,10 +1,11 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 class PostList(generic.ListView):
@@ -84,30 +85,26 @@ class PostLike(View):
 # @login_required #
 def new_post(request):
 
-    if not request.user.is_superuser: #
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+    # if not request.user.is_superuser: #
+    #     messages.error(request, 'Sorry, only store owners can do that.')
+    #     return redirect(reverse('home'))
 
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            # post.published_date = timezone.now()
-            # post.save()
-            # return redirect('post_details', pk=post.pk)
-            return redirect(reverse('post_detail', args=[post.id])) #
-        else: #
-            messages.error(request, 'Failed to add new post.') #
+            post.created_on = timezone.now()
+            post.save()
+            return redirect('index')
+        else:
+            messages.error(request, 'Failed to add new post.')
+
     else:
         form = PostForm()
 
-    # template = 'products/add_product.html' #
-    # context = {
-    #     'form': form,
-    # }
-
     return render(request, 'new_post.html', {'form': form})
+
 
 
 def about(request):
