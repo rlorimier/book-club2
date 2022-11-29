@@ -20,9 +20,7 @@
                 </div>
             </div>
             {% endfor %}
-
         </div>
-        
     </div>
     
     {% if is_paginated %}
@@ -33,7 +31,6 @@
             {% endif %}
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-warning text-black font-weight-bold"> NEXT &raquo;</a></li>
-
             {% endif %}
         </ul>
     </nav>
