@@ -9,6 +9,8 @@ from .forms import CommentForm, PostForm
 
 
 class PostList(generic.ListView):
+    """ A view to show a list with all blog posts """
+
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
@@ -16,6 +18,10 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
+    """
+    A view to show the posts in detail
+    It also saves the user comments on each post
+    """
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -70,6 +76,7 @@ class PostDetail(View):
 
 
 class PostLike(View):
+    """ A view to add likes at the posts """
 
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
@@ -82,12 +89,8 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-# @login_required #
 def new_post(request):
-
-    # if not request.user.is_superuser: #
-    #     messages.error(request, 'Sorry, only store owners can do that.')
-    #     return redirect(reverse('home'))
+    """ A view to save new posts """
 
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
@@ -106,7 +109,8 @@ def new_post(request):
     return render(request, 'new_post.html', {'form': form})
 
 
-
 def about(request):
+    """ A view to show the about us page """
+
     aboutus = ""
     return render(request, 'about.html', {'aboutus': aboutus})
