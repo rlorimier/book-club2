@@ -128,6 +128,21 @@ def edit_post(request, slug):
     return render(request, 'edit_post.html', {'form': form})
 
 
+@login_required
+def delete_post(request, slug):
+    """ Delete a post """
+
+    # if not request.user.is_superuser:
+    #     messages.success(
+    #         request, 'Sorry, only blog owners can access this page.')
+    #     return redirect(reverse('home'))
+
+    post = get_object_or_404(Post, slug=slug)
+    post.delete()
+    # messages.success(request, 'Package deleted!')
+    return redirect(reverse('index'))
+
+
 def about(request):
     """ A view to show the about us page """
 

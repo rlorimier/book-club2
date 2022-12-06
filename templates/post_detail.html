@@ -22,12 +22,14 @@
             <div class="image-flash">
                 <p class="author">Author: {{ post.author }}</p>
             </div>
+            
         </div>
-
-        {% if user.is_superuser %}
-          <a href="{% url 'edit_post' post.slug %}" class="btn btn-outline-dark btn-sm">Edit</a>
-        {% endif %}
-
+        <div>
+          {% if user.is_superuser %}
+            <a href="{% url 'edit_post' post.slug %}" class="btn btn-outline-dark btn-sm">Edit</a>
+            <a href="{% url 'delete_post' post.slug %}" class="btn btn-outline-danger btn-sm">Delete</a>
+          {% endif %}
+        </div>
         <p class="card-text">{{ post.excerpt|linebreaksbr }}</p>
 
         <div>
