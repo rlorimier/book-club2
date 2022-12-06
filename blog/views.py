@@ -89,6 +89,7 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+@login_required
 def new_post(request):
     """ A view to save new posts """
 
@@ -109,7 +110,10 @@ def new_post(request):
     return render(request, 'new_post.html', {'form': form})
 
 
+@login_required
 def edit_post(request, slug):
+    """ A view to edit existing posts """
+
     post = get_object_or_404(Post, slug=slug)
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES, instance=post)
