@@ -109,6 +109,21 @@ def new_post(request):
     return render(request, 'new_post.html', {'form': form})
 
 
+def edit_post(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.created_on = timezone.now()
+            post.save()
+            return redirect('post_detail', slug=slug)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'edit_post.html', {'form': form})
+
+
 def about(request):
     """ A view to show the about us page """
 
