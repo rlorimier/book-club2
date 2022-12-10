@@ -152,6 +152,25 @@ A favicon was added the website to enable users to easily locate the website in 
 ![Edit-btn](media/images/edit-btn.png)
 
 
+## Wireframes
+
+* Home
+
+![WFHome](media/images/wf-home.png)
+
+* About
+
+![WFAbout](media/images/wf-about.png)
+
+* Post details
+
+![WFPostDetails](media/images/wf-postdetail.png)
+
+* New Post
+
+![WFNewPost](media/images/wf-newpost.png)
+
+
 
 ## Testing
 
