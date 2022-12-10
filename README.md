@@ -1,19 +1,19 @@
 # BOOK CLUB 2
 
-For my Project Portifolio #4 on Code Institute's Diploma in Software Developement course I have created a blog, called Book Club. The blog is used to post reviews about books. All users can read the preview of the reviews on the main page and then be redirected to another page with the full review clicking on the 'Read more' button. If the user is registered and currently logged in, he can have access to leave a comment or like/dislike a post.
+For my Project Portifolio #4 on Code Institute's Diploma in Software Developement course I have created a blog, called Book Club. 
 
-This is my second time submiting my PP4. The first attempt was failed because the deployment on Heroku was not done correctly, causing the live link to crash. With this new project I was able to fix some past issues and improve a few small things that did not look right or that was not working properly on the first time.
+The website is used to post reviews about books. It has a simple interface, which makes it easy to be used by all users. The background image is a library bookself and it matches nicely with the website colors - black for navbar and footer and yellow for header and 'Read more' buttons.
+
+All users can read the preview of the reviews on the main page and then be redirected to another page with the full review clicking on the 'Read more' button. If the user is registered and currently logged in, he can have access to leave a comment or like/dislike a post.
+
+Admins have the option of creating a new blog post, as well as edit and delete existing posts on the website.
+
 
 
 You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 
 ![HOME-PHOTO](media/images/all-devices-black.png)
-
-
-
-
-
 
 
 
@@ -43,7 +43,6 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 
 
-
 ## Resources
 
 
@@ -55,7 +54,6 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 
 
-
 ## Credits
 
 
@@ -63,37 +61,6 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 * Book reviews from [Goodreads](https://www.goodreads.com/) website.
 * Book cover images from [Google](http://www.google.com)
-
-
-
-## Features
-
-
-### Code features
-
-* Created in Django using Gitpod.
-* Deployed in Heroku for online interaction.
-
-
-### User features
-
-* Home button, on the navigation bar at the top left, bringing the user back to the home page.
-* About button, on the navigation bar at the top left, leading the user to a new page containing information about how the blog was created.
-* Option to register/sign in on the blog clicking on the respective button from the navigation bar on the top left.
-![Navbar-Login](media/images/navbar-login.png)
-
-* Option to log out by clicking on the respective button from the navigation bar on the top left.
-![Navbar-Logout](media/images/navbar-logout.png)
-
-* Once registered/logged in, user can interact with the blog, leaving a new comment or like/dislike posts on the post page.
-![Comments-field](media/images/comments-field.png)
-
-* Warning message is shown when user log in/out or leave a comment.
-![Warning-msg](media/images/warning-msg.png)
-
-* Read more button, on botton of every post, giving the user the possibility of reading the full review.
-![Readmore-btn](media/images/readmore-btn.png)
-
 
 
 
@@ -141,8 +108,48 @@ The board was created using Github projects and can be located [HERE](https://gi
 
 
 
+## Features
 
 
+### Favicon
+
+A favicon was added the website to enable users to easily locate the website in the browser when multiple tabs are open.
+
+![Favicon](media/images/favicon.png)
+
+### Code features
+
+* Created in Django using Gitpod.
+* Deployed in Heroku for online interaction.
+
+
+### User features
+
+* Home button, on the navigation bar at the top left, bringing the user back to the home page.
+* About button, on the navigation bar at the top left, leading the user to a new page containing information about how the blog was created.
+* Option to register/sign in on the blog clicking on the respective button from the navigation bar on the top left.
+
+![Navbar-Login](media/images/navbar-login.png)
+
+* Option to log out by clicking on the respective button from the navigation bar on the top left.
+
+![Navbar-Logout](media/images/navbar-logout.png)
+
+* Once registered/logged in, user can interact with the blog, leaving a new comment or like/dislike posts on the post page.
+
+![Comments-field](media/images/comments-field.png)
+
+* Warning message is shown when user log in/out or leave a comment.
+
+![Warning-msg](media/images/warning-msg.png)
+
+* Read more button, on botton of every post, giving the user the possibility of reading the full review.
+
+![Readmore-btn](media/images/readmore-btn.png)
+
+* Edit/Delete button, option available only for superusers.
+
+![Edit-btn](media/images/edit-btn.png)
 
 
 
@@ -153,10 +160,6 @@ The board was created using Github projects and can be located [HERE](https://gi
 
 * Manual tests done as admin user, regular user and visitant. In all scenarios the blog funcionalities worked without showing any issues.
 * I also send the live link to friends and family members for testing and feedback.
-
-Manual testing result:
-
-![Manual-Testing](media/images/manual-testing.png)
 
 
 ### Code Testing
@@ -189,6 +192,18 @@ W3C Validator shows one error on the HTML, however it cannot be fixed. The closi
 ![Accessibility-test](media/images/accessibility-test.png)
 
 
+### Page quality measurement
+
+Tested using [PageSpeed](https://pagespeed.web.dev/)
+
+* On mobile views - Full results can be found [HERE](https://pagespeed.web.dev/report?url=https%3A%2F%2Fbook-club2.herokuapp.com%2F&form_factor=mobile)
+
+![Mobile](media/images/perform-mobile.png)
+
+* On desktop views - Full results can be found [HERE](https://pagespeed.web.dev/report?url=https%3A%2F%2Fbook-club2.herokuapp.com%2F&form_factor=desktop)
+
+![Desktop](media/images/perform-desktop.png)
+
 
 ### Browser Testing
 
@@ -198,7 +213,6 @@ The site was tested and worked without any issues, using:
 * Microsoft Edge
 * Firefox
 * Samsung Internet
-
 
 
 
