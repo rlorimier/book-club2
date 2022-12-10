@@ -37,7 +37,7 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 * [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/) for CSS package
 * [Cloudinary](https://cloudinary.com/) to storage media
 * [Heroku](https://www.heroku.com) for deployment
-* Postgres as database (from Heroku)
+* [ElephantSQL](https://www.elephantsql.com/) for database
 * [Favicon](https://favicon.io/) for favicon
 * [Pexels](https://www.pexels.com/) for background image
 
@@ -275,27 +275,75 @@ When the user is registering into the blog, if he adds his email and clicks on '
 
 ## Creating a Repository and Deploying
 
+### GitHub / Gitpod
+
 * To create a new repository:
 
-Logged in my GitHub page and accessed Code Institute GitHub page. 
+  1. Logged in my GitHub page and accessed Code Institute GitHub page. 
 
-Selected python-essencials-template and clicked in Use This Template. 
+  2. Selected python-essencials-template and clicked in Use This Template. 
 
-Created a new repository from the one mentioned above and choose the option 'Gitpod'. Once the repository is open on Gitpod it is just start to code. I chose the option to save automatically. 
+  3. Created a new repository from the one mentioned above and choose the option 'Gitpod'. Once the repository is open on Gitpod it is just start to code. I chose the option to save automatically. 
 
-After every significant amount of coding is time for local commits: On Gitpot, go to Source Control, type in a message and click Commit. After a work day, the last local commit is done and then click in Push to commit all local commits to GitHub repository. 
+  4. After every significant amount of coding is time for local commits: On Gitpot, go to Source Control, type in a message and click Commit. After a work day, the last local commit is done and then click in Push to commit all local commits to GitHub repository. 
 
+
+### ElephantSQL
+
+* Create Database
+
+  1. Sign up for ElephantSQL.com to access your dashboard and click “Create New Instance”
+  
+  2. Set up your plan, give it a name and select the Tiny Turtle (Free) plan
+  
+  3. Click “Select Region”, select a data center near you and click "Review"
+  
+  4. Check your details are correct and then click “Create instance”
+  
+  5. Return to the ElephantSQL dashboard and click on the database instance name for this project
+  
+  6. In the URL section, clicking the copy icon will copy the database URL to your clipboard
+  
+  7. Open your Gitpod and, in the terminal, install dj_database_url and psycopg2, both of these are needed to connect to your external database
+  
+  8. Update your requirements.txt file with the newly installed packages
+  
+  9. In your settings.py file, import dj_database_url underneath the import for os
+  
+  10. Comment out your current database and add the new ElephantSQL database
+  
+  11. Migrate your database models to your new database and then load in the fixtures
+  
+  12. Create a superuser for your new database
+  
+  13. Delete the new database from your settings.py and uncomment your old database
+
+
+### Heroku
+
+* Create App
+
+  1. Log in to Heroku and 'Create New App' from the dashboard
+
+  2. Give your app a name and select the region closest to you. When you’re done, click Create app to confirm
+
+  3. Add config vars to Heroku - go to Heroku Settings tab, click on Reveal Config Vars, and add environment variables described below in key/value pairs
+
+     * DATABASE_URL - your database variable from ElephantSQL
+
+     * SECRET_KEY - there are websites online that will help you generate random Django secret keys
+
+     * CLOUDINARY_URL - your database variable from Cloudinary
 
 * To Deploy:
 
-The project was deployed using Heroku. The process is as follows:
+  1. Navigate to the Deploy tab in Heroku and connect your app to GitHub.
 
-Once you have signed up to Heroku, on the top right of the dashboard there is a button labelled 'New'. This will open a dropdown; please select 'Create new app'. On the next page you can choose your region and a name for the project. Then click 'Create app'.
+  2. Deploy the branch manually.
+  
+  3. Check the build log for errors.
+  
+  4. Once Heroku completed the build process, you will see a 'Your App Was Successfully Deployed' message and a link to the live site.
+  
+  5. You can also choose to enable Automatic deploys.
 
-On the next page there is a menu along the top. Navigate to 'Settings', where you will find the config vars. Scroll down to the section named 'Config vars' and click on the button labelled 'Reveal config vars'. Cloudinary and Postgres will both need config vars as per your own details. You will also need to set a secret key. Once the config vars are saved, back in Gitpod save them in an env.py file. Make sure to add env.py to your .gitignore list so that your config vars do not become publically available on Github.
-
-If you scroll back to the top of the page you will find the 'Deploy' tab, which has multiple options for deployment. As I am using Github for this project, I selected it and a bar came up to search for the repo I wish to connect to.
-
-Once you have connected, you have the option to deploy automatically (the app will update every time you push) or manually (update only when you choose). I chose automatic but you can do what suits you.
-
-After the first push/update, your app will be ready to go!
