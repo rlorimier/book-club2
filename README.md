@@ -13,38 +13,6 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 
 
-## Features
-
-
-### Code features
-
-* Created in Django using Gitpod.
-* Deployed in Heroku for online interaction.
-
-
-### User features
-
-* Home button, on the navigation bar at the top left, bringing the user back to the home page.
-* About button, on the navigation bar at the top left, leading the user to a new page containing information about how the blog was created.
-* Option to register/sign in on the blog clicking on the respective button from the navigation bar on the top left.
-![Navbar-Login](media/images/navbar-login.png)
-
-* Option to log out by clicking on the respective button from the navigation bar on the top left.
-![Navbar-Logout](media/images/navbar-logout.png)
-
-* Once registered/logged in, user can interact with the blog, leaving a new comment or like/dislike posts on the post page.
-![Comments-field](media/images/comments-field.png)
-
-* Warning message is shown when user log in/out or leave a comment.
-![Warning-msg](media/images/warning-msg.png)
-
-* Read more button, on botton of every post, giving the user the possibility of reading the full review.
-![Readmore-btn](media/images/readmore-btn.png)
-
-
-### To be implemented 
-
-* For registered users - option to contribute with the blog, creating new posts. A new button called 'New post' will be displayed on the navbar, on the top left. Clicking on the button the user will be redirected to a new page where he can add the title, the review and the book cover. Once saved the post goes to admin aproval and, if aproved, it will be displayed as posted by the user on the home page.
 
 
 
@@ -98,62 +66,82 @@ You can check the blog page clicking [HERE](https://book-club2.herokuapp.com/)
 
 
 
+## Features
+
+
+### Code features
+
+* Created in Django using Gitpod.
+* Deployed in Heroku for online interaction.
+
+
+### User features
+
+* Home button, on the navigation bar at the top left, bringing the user back to the home page.
+* About button, on the navigation bar at the top left, leading the user to a new page containing information about how the blog was created.
+* Option to register/sign in on the blog clicking on the respective button from the navigation bar on the top left.
+![Navbar-Login](media/images/navbar-login.png)
+
+* Option to log out by clicking on the respective button from the navigation bar on the top left.
+![Navbar-Logout](media/images/navbar-logout.png)
+
+* Once registered/logged in, user can interact with the blog, leaving a new comment or like/dislike posts on the post page.
+![Comments-field](media/images/comments-field.png)
+
+* Warning message is shown when user log in/out or leave a comment.
+![Warning-msg](media/images/warning-msg.png)
+
+* Read more button, on botton of every post, giving the user the possibility of reading the full review.
+![Readmore-btn](media/images/readmore-btn.png)
+
+
+
 
 ## User Stories
 
 
-### As Visitor:
+### Agile Planning
 
-* I want to be able to navigate through the website.
+The project was developed using agile methodologies, by delivering small features divided in 3 sprints - To do, In progress, Done.
 
-All pages are accessible to all visitors on the blog.
+Every card was labeled under User Stories, divided in User and Admin.
 
+The board was created using Github projects and can be located [HERE](https://github.com/users/rlorimier/projects/3/views/1) to have access to more information on the project cards.
 
-* I want to know how the blog was created.
-
-All users can have access to the About us page.
-
-
-* I want to read the book reviews.
-
-The pages with full reviews are accessible to all users clicking on the button ‘Read more’ at the Home page. The user can read the review, see the book cover, see the number of likes, and read the comments left from registered users.
+![AGILE-PLANNING](media/images/agile-book.png)
 
 
-* I want to make comments and like the posts.
+#### As Visitor:
 
-This option is only available for registered users.
+* I want to be able to navigate through the website
 
+* I want to know how the blog was created so I can learn more about the blog
 
-* I want to leave a review
+* I want to read the book reviews so I can decide to read the book or not
 
-This option is only available for the blog admin.
-
-
-### As Registered User:
-
-* I want to be able to navigate through the website.
-
-All pages are accessible to all visitors on the blog.
+* I want to be able to register so I can interact with the blog
 
 
-* I want to know how the blog was created.
+#### As Registered User:
 
-All users can have access to the About us page.
+* I want to be able to login/out so I can interact with the blog
 
+* I want to leave comments on the posts so I can leave my personal opnion
 
-* I want to read the book reviews.
-
-The pages with full reviews are accessible to all users clicking on the button ‘Read more’ at the Home page. The user can read the review, see the book cover, see the number of likes, and read the comments left from registered users.
-
-
-* I want to make comments and like the posts.
-
-This option is available when the user is logged in to the blog, by accessing the book review page. The button to like the book review is just after the text, followed by the comment field.
+* I want to like the posts so I can tell other users that I like it
 
 
-* I want to leave a review.
+#### As Admin
 
-This option is only available for the blog admin.
+* I want to write a new blog post so I can keep the blog updated
+
+* I want to delete a blog post so I can remove unwanted posts
+
+* I want to edit a blog post so I can amend it
+
+
+
+
 
 
 
